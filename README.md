@@ -1,5 +1,9 @@
-# CAUTI-Rate-KPI-Dashboard-2025
-This project tracks the Catheter-Associated Urinary Tract Infection (CAUTI) rate across hospital departments throughout 2025. It turns raw monthly infection counts into a KPI dashboard so infection-prevention staff can monitor trends, spot departments or months that fall outside normal variation, and support ongoing quality-improvement efforts.
+# CAUTI Rate KPI Dashboard — 2025
+
+## Project Purpose
+
+This project tracks the **Catheter-Associated Urinary Tract Infection (CAUTI) rate** across hospital departments throughout 2025. It turns raw monthly infection counts into a KPI dashboard so infection-prevention staff can monitor trends, spot departments or months that fall outside normal variation, and support ongoing quality-improvement efforts.
+
 ## File
 
 - `CAUTI_Data_2025.xlsx`
@@ -35,13 +39,13 @@ Formula-driven summary tables built on top of `Dataset`, using `VLOOKUP`, `SUMIF
   
   This is a standard statistical process control (SPC) setup used to flag months where the infection rate moved outside expected random variation.
 
-- **Per-Department Trend Tables** — six side-by-side tables (Medical ICU, Medical Ward, Surgical ICU, Surgical Ward, NICU, PICU), each showing the monthly infection rate and the month-over-month **Variance**.
+- **Department Trend Pivot Table** — a single PivotTable (replacing the six separate per-department tables) that lets the user filter by **Department** and instantly view that department's monthly **Infection Rate** and month-over-month **Variance**, without duplicating the layout six times.
 
 ### 3. `Dashboard`
 The visual KPI layer, built entirely from native Excel charts linked to the `Analysis` sheet:
 
 - **1 SPC line chart** — hospital-wide monthly infection rate with Mean/UCL/LCL bands, for at-a-glance monitoring of whether the process is in control.
-- **6 department bar charts** — one per department, comparing monthly infection rate against variance, to identify which units are driving overall trends.
+- **1 PivotTable-driven bar chart** — a single filterable chart connected to the Department Trend Pivot Table, showing infection rate against variance for whichever department is selected, so any unit can be reviewed on demand without scrolling through six separate charts.
 
 All charts update automatically when the `Dataset` sheet is edited, since every downstream cell is formula-driven.
 
